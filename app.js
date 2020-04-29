@@ -25,7 +25,6 @@ window.onresize = drawChart;
 // create function to return [day, cases, recoveries, deaths]
 
 function getCovidCasesData() {
-  loader();
   fetch("https://coronavirus-ph-api.herokuapp.com/doh-data-drop")
     .then((response) => response.json())
     .then((data) => {
@@ -72,26 +71,6 @@ function getCovidCasesData() {
     .catch((err) => console.log(err));
 }
 
-function loader(stop) {
-  const loading = document.getElementById("loading");
-  let frames = 1;
-  let loader = setInterval(load, 600);
-  function load() {
-    if (frames == 1) {
-      loading.innerHTML = "Covid 19 Chart is loading.";
-      frames++;
-    } else if (frames == 2) {
-      loading.innerHTML = "Covid 19 Chart is loading..";
-      frames++;
-    } else {
-      loading.innerHTML = "Covid 19 Chart is loading...";
-      frames = 1;
-    }
-  }
-  if (stop == true) {
-    clearInterval(loader);
-  }
-}
 // total cases
 const cases = document.getElementById("cases");
 const casesToday = document.getElementById("cases-today");
