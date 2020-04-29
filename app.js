@@ -86,6 +86,7 @@ const updated = document.querySelectorAll(".date-updated");
 
 getTotalCase();
 function getTotalCase() {
+  totalCases(false);
   fetch("https://coronavirus-ph-api.herokuapp.com/total")
     .then((response) => response.json())
     .then((data) => {
@@ -99,8 +100,22 @@ function getTotalCase() {
       deathsToday.innerHTML = data.data.deaths_today;
       recoveriesToday.innerHTML = data.data.recoveries_today;
       casesToday.innerHTML = data.data.cases_today;
+      totalCases(true);
       // source.setAttribute("href", data.source);
       // source.innerHTML = data.source;
       updated.forEach((update) => (update.innerHTML = data.data.last_update));
     });
+}
+
+function totalCases(visibility) {
+  const totalCases = document.getElementById("total-cases");
+  const loadTotalCases = document.getElementById("load-total-cases");
+
+  if (visibility === true) {
+    totalCases.style.display = "block";
+    loadTotalCases.style.display = "none";
+  } else {
+    loadTotalCases.style.display = "flex";
+    totalCases.style.display = "none";
+  }
 }

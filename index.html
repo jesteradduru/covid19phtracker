@@ -61,69 +61,77 @@
     <main class="container">
      
       <!-- philippines active cases -->
-      <h1 class="my-5 text-center text-dark">As of <span class="date-updated"></span></h1>
-      <div class="row mt-4">
-        <div class="col-12">
-          <header class="text-center text-primary">
-            <h2>Active Case</h2>
-            <h4><span id="cases"></span>(+<span id="cases-today">0</span>)</h4>
-          </header>
-        </div>
-        <div class="col">
-          <header class="text-center text-danger">
-            <h3>Deaths</h3>
-            <h5>
-              <span id="deaths"></span> (+<span id="deaths-today">0</span>)
-            </h5>
-          </header>
-        </div>
-        <div class="col">
-          <header class="text-center text-success">
-            <h3>Recoveries</h3>
-            <h5>
-              <span id="recoveries"></span> (+<span id="recoveries-today">0</span
-              >)
-            </h5>
-          </header>
-        </div>
-        <div class="col-12">
-          <div class="row mt-5">
-            <div class="col">
-              <header class="text-center text-info">
-                <h4>Admitted</h4>
-                <h6 id="admitted">
-                  0
-                </h6>
-              </header>
-            </div>
-            <div class="col">
-              <header class="text-center text-info">
-                <h4>Fatality Rate</h4>
-                <h6 id="fatality">
-                  0
-                </h6>
-              </header>
-            </div>
-            <div class="col">
-              <header class="text-center text-info">
-                <h4>Recovery Rate</h4>
-                <h6 id="recovery">
-                  0
-                </h6>
-              </header>
+      <div id="total-cases">
+        <h2 class="my-5 text-center text-dark">As of <span class="date-updated"></span>:</h2>
+        <div class="row mt-4">
+          <div class="col-12">
+            <header class="text-center text-primary">
+              <h2>Confirmed Cases</h2>
+              <h4><span id="cases"></span>(+<span id="cases-today">0</span>)</h4>
+            </header>
+          </div>
+          <div class="col">
+            <header class="text-center text-danger">
+              <h3>Deaths</h3>
+              <h5>
+                <span id="deaths"></span> (+<span id="deaths-today">0</span>)
+              </h5>
+            </header>
+          </div>
+          <div class="col">
+            <header class="text-center text-success">
+              <h3>Recovered</h3>
+              <h5>
+                <span id="recoveries"></span> (+<span id="recoveries-today">0</span
+                >)
+              </h5>
+            </header>
+          </div>
+          <div class="col-12">
+            <div class="row mt-5">
+              <div class="col">
+                <header class="text-center text-info">
+                  <h4>Active Cases</h4>
+                  <h6 id="admitted">
+                    0
+                  </h6>
+                </header>
+              </div>
+              <div class="col">
+                <header class="text-center text-info">
+                  <h4>Fatality Rate</h4>
+                  <h6 id="fatality">
+                    0
+                  </h6>
+                </header>
+              </div>
+              <div class="col">
+                <header class="text-center text-info">
+                  <h4>Recovery Rate</h4>
+                  <h6 id="recovery">
+                    0
+                  </h6>
+                </header>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-12">
-          <hr />
-          <div class="d-flex justify-content-center">
-            <i class="mr-2">Source:</i
-            ><a href="https://coronavirus-ph-api.herokuapp.com/total" target="_blank" id="source" class="mr-3">ttps://coronavirus-ph-api.herokuapp.com/total</a>
-            <i class="mr-2">Updated on:</i>
-            <i class="text-primary date-updated"></i>
+          <div class="col-12">
+            <hr />
+            <div class="d-flex justify-content-center">
+              <i class="mr-2">Source:</i
+              ><a href="https://coronavirus-ph-api.herokuapp.com/total" target="_blank" id="source" class="mr-3">ttps://coronavirus-ph-api.herokuapp.com/total</a>
+              <i class="mr-2">Updated on:</i>
+              <i class="text-primary date-updated"></i>
+            </div>
           </div>
         </div>
       </div>
+     <div class="justify-content-center align-items-center flex-column my-5" id="load-total-cases">
+      <div class="spinner-border text-danger"></div>
+      <h6>Loading data of total cases</h6>
+     </div>
+     <!-- end of line -->
+
       <!-- google chart -->
       
         <div class="w-100" style="overflow-x: auto; overflow-y: hidden;">
