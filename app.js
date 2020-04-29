@@ -67,7 +67,6 @@ function getCovidCasesData() {
       }
     })
     .then(() => {
-      laoder(true);
       google.charts.setOnLoadCallback(drawChart);
     })
     .catch((err) => console.log(err));
