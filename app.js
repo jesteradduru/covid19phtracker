@@ -11,6 +11,9 @@ function drawChart() {
     title: "Philippines Covid 19 Curve Chart",
     curveType: "none",
     legend: { position: "bottom" },
+    chartArea: {
+      width: 500,
+    },
   };
 
   var chart = new google.visualization.LineChart(
@@ -19,7 +22,7 @@ function drawChart() {
 
   chart.draw(data, options);
 }
-
+window.onresize = drawChart;
 // create function to return [day, cases, recoveries, deaths]
 function getCovidCasesData() {
   fetch("https://coronavirus-ph-api.herokuapp.com/doh-data-drop")
@@ -31,7 +34,7 @@ function getCovidCasesData() {
       let countDailyCaseRecoveries = 0;
       var now = new Date();
       let lastIndex = 0;
-
+      let covidDate = "";
       for (
         var d = new Date("2020-01-30");
         d <= now;
@@ -52,8 +55,9 @@ function getCovidCasesData() {
             break;
           }
         }
+        covidDate = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
         covidDailyData.push([
-          d.toString(),
+          covidDate,
           countDailyCase,
           countDailyCaseDeath,
           countDailyCaseRecoveries,
@@ -61,6 +65,8 @@ function getCovidCasesData() {
       }
     })
     .catch((err) => console.log(err));
+
+  google.charts.setOnLoadCallback(drawChart);
 }
 // total cases
 const cases = document.getElementById("cases");
@@ -80,7 +86,7 @@ function getTotalCase() {
   fetch("https://coronavirus-ph-api.herokuapp.com/total")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.data);
+      // console.log(data.data);
       cases.innerHTML = data.data.cases;
       deaths.innerHTML = data.data.deaths;
       recoveries.innerHTML = data.data.recoveries;
@@ -90,8 +96,8 @@ function getTotalCase() {
       deathsToday.innerHTML = data.data.deaths_today;
       recoveriesToday.innerHTML = data.data.recoveries_today;
       casesToday.innerHTML = data.data.cases_today;
-      source.setAttribute("src", data.source);
-      source.innerHTML = data.source;
+      // source.setAttribute("href", data.source);
+      // source.innerHTML = data.source;
       updated.forEach((update) => (update.innerHTML = data.data.last_update));
     });
 }

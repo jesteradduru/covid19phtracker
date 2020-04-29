@@ -81,7 +81,7 @@
           <header class="text-center text-success">
             <h3>Recoveries</h3>
             <h5>
-              <span id="recoveries"></span> (+<span id="recoveries-today"></span
+              <span id="recoveries"></span> (+<span id="recoveries-today">0</span
               >)
             </h5>
           </header>
@@ -92,7 +92,7 @@
               <header class="text-center text-info">
                 <h4>Admitted</h4>
                 <h6 id="admitted">
-                  19999
+                  0
                 </h6>
               </header>
             </div>
@@ -100,7 +100,7 @@
               <header class="text-center text-info">
                 <h4>Fatality Rate</h4>
                 <h6 id="fatality">
-                  19999
+                  0
                 </h6>
               </header>
             </div>
@@ -108,7 +108,7 @@
               <header class="text-center text-info">
                 <h4>Recovery Rate</h4>
                 <h6 id="recovery">
-                  19999
+                  0
                 </h6>
               </header>
             </div>
@@ -118,27 +118,38 @@
           <hr />
           <div class="d-flex justify-content-center">
             <i class="mr-2">Source:</i
-            ><a href="" target="_blank" id="source" class="mr-3"></a>
+            ><a href="https://coronavirus-ph-api.herokuapp.com/total" target="_blank" id="source" class="mr-3">ttps://coronavirus-ph-api.herokuapp.com/total</a>
             <i class="mr-2">Updated on:</i>
             <i class="text-primary date-updated"></i>
           </div>
         </div>
       </div>
       <!-- google chart -->
-      <div id="curve_chart" class="w-100" style="height: 500px;"></div>
+      
+        <div class="w-100" style="overflow-x: auto; overflow-y: hidden;">
+          <div id="curve_chart" class="mx-auto" style="height: 400px; width: 600px;"></div>
+          <a target="_blank" href="https://coronavirus-ph-api.herokuapp.com/doh-data-drop">Source: <i class="text-lead text-info">https://coronavirus-ph-api.herokuapp.com/doh-data-drop</i></a>
+        </div>
+      
       <hr>
+      <h2 class="mt-5">Data</h2>
+      <p>All data are programmatically retrieved, re-formatted and stored in the cache for one hour.</p>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_the_Philippines ">https://en.wikipedia.org/wiki/2020...</a></li>
+        <li class="list-group-item"><a href="https://github.com/gigerbytes/ncov-ph-data ">https://github.com/gigerbytes/ncov-ph-data </a></li>
+      </ul>
     </main>
     <!-- end of container -->
     <footer class="bg-dark d-flex flex-column mt-5 py-3 ">
-      <div class="d-flex w-25 justify-content-around mx-auto  mb-1"">
+      <div class="d-flex w-50 justify-content-around mx-auto  mb-1"">
         <a href="./index.html" class="text-light">HOME</a>
         <a href="./about.html" class="text-light">ABOUT</a>
       </div>
       <div class="d-flex w-25 justify-content-around mx-auto mb-2">
-        <a href="./facebook.com/jesteradduru17" class="text-light"
+        <a href="https://facebook.com/jesteradduru17" class="text-light"
           ><i class="fa fa-facebook"></i
         ></a>
-        <a href="./jesteradduru@gmail.com" class="text-light"
+        <a href="https://jesteradduru@gmail.com" class="text-light"
           ><i class="fa fa-google"></i
         ></a>
       </div>
