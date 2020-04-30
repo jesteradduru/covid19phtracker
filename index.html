@@ -119,16 +119,21 @@
             </div>
           </div>
           <div class="col-12">
-            <hr />
-            <div class="d-flex justify-content-center">
-              <i class="mr-2">Source:</i
-              ><a href="https://coronavirus-ph-api.herokuapp.com/total" target="_blank" id="source" class="mr-3">ttps://coronavirus-ph-api.herokuapp.com/total</a>
-              <i class="mr-2">Last Updated:</i>
+           
+            <div class="d-flex justify-content-between mt-4">
+              <div>
+                <i class="mr-2">Source:</i
+                  ><a href="https://coronavirus-ph-api.herokuapp.com/total" target="_blank" id="source" class="mr-3">ttps://coronavirus-ph-api.herokuapp.com/total</a>
+              </div>
+              <div>
+                <i class="mr-2">Last Updated:</i>
               <i class="text-primary date-updated"></i>
+              </div>
             </div>
           </div>
         </div>
       </header>
+      <hr />
      <section class="justify-content-center align-items-center flex-column my-5" id="load-total-cases">
       <div class="spinner-border text-danger"></div>
       <h6>Loading data of total cases</h6>
@@ -144,8 +149,10 @@
             <h6 class="text-danger" id="loading">Loading COVID-19 graph</h6>
           </div>
           </div>
-          <a target="_blank" href="https://coronavirus-ph-api.herokuapp.com/doh-data-drop" class="text-dark">Source: <i class="text-lead text-info">https://coronavirus-ph-api.herokuapp.com/doh-data-drop</i></a>
-        <p> Last Updated: <i class="text-lead text-danger" id="chart-last-updated"></i></p>
+          <div class="d-flex justify-content-between mt-4">
+            <a target="_blank" href="https://coronavirus-ph-api.herokuapp.com/doh-data-drop" class="text-dark">Source: <i class="text-lead text-primary">https://coronavirus-ph-api.herokuapp.com/doh-data-drop</i></a>
+            <p> Last Updated: <i class="text-lead text-primary" id="chart-last-updated"></i></p>
+          </div>
         </section>
       
       <hr>
@@ -169,6 +176,9 @@
         <a href="https://jesteradduru@gmail.com" class="text-light"
           ><i class="fa fa-google"></i
         ></a>
+        <a href="https://github.com/jesteradduru" class="text-light"
+        ><i class="fa fa-github"></i
+      ></a>
       </div>
       <i class="text-center text-muted">Developed By Jester Adduru</i>
     </footer>
