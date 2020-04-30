@@ -1,5 +1,5 @@
 google.charts.load("current", { packages: ["corechart"] });
-let covidDailyData = [["Day", "Active Cases", "Deaths", "Recoveries"]];
+let covidDailyData = [["Day", "Confirmed Cases", "Deaths", "Recoveries"]];
 const cases = document.getElementById("cases");
 const casesToday = document.getElementById("cases-today");
 const deaths = document.getElementById("deaths");
