@@ -120,29 +120,30 @@
             <div class="d-flex justify-content-center">
               <i class="mr-2">Source:</i
               ><a href="https://coronavirus-ph-api.herokuapp.com/total" target="_blank" id="source" class="mr-3">ttps://coronavirus-ph-api.herokuapp.com/total</a>
-              <i class="mr-2">Updated on:</i>
+              <i class="mr-2">Last Updated:</i>
               <i class="text-primary date-updated"></i>
             </div>
           </div>
         </div>
       </div>
-     <div class="justify-content-center align-items-center flex-column my-5" id="load-total-cases">
+     <section class="justify-content-center align-items-center flex-column my-5" id="load-total-cases">
       <div class="spinner-border text-danger"></div>
       <h6>Loading data of total cases</h6>
-     </div>
+     </section>
      <!-- end of line -->
 
       <!-- google chart -->
       
-        <div class="w-100" style="overflow-x: auto; overflow-y: hidden;">
+        <section class="w-100" style="overflow-x: auto; overflow-y: hidden;">
           <div id="curve_chart" class="mx-auto" style="height: 400px; width: 600px;">
           <div class="d-flex flex-column justify-content-center align-items-center h-100 bg-light">
             <div class="spinner-border text-danger"></div>
             <h6 class="text-danger" id="loading">Loading COVID-19 graph</h6>
           </div>
           </div>
-          <a target="_blank" href="https://coronavirus-ph-api.herokuapp.com/doh-data-drop">Source: <i class="text-lead text-info">https://coronavirus-ph-api.herokuapp.com/doh-data-drop</i></a>
-        </div>
+          <a target="_blank" href="https://coronavirus-ph-api.herokuapp.com/doh-data-drop" class="text-dark">Source: <i class="text-lead text-info">https://coronavirus-ph-api.herokuapp.com/doh-data-drop</i></a>
+        <p> Last Updated: <i class="text-lead text-danger" id="chart-last-updated"></i></p>
+        </section>
       
       <hr>
       <h2 class="mt-5">Data</h2>
