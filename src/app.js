@@ -14,18 +14,17 @@ let chartLastUpdated = "";
 async function getTotalCase() {
   totalCases(false);
   const res = await fetch("https://coronavirus-ph-api.herokuapp.com/total");
-  const data = await res.json();
-
-  cases.innerHTML = data.data.cases;
-  deaths.innerHTML = data.data.deaths;
-  recoveries.innerHTML = data.data.recoveries;
-  admitted.innerHTML = data.data.admitted;
-  fatality.innerHTML = data.data.fatality_rate;
-  recovery.innerHTML = data.data.recovery_rate;
-  deathsToday.innerHTML = data.data.deaths_today;
-  recoveriesToday.innerHTML = data.data.recoveries_today;
-  casesToday.innerHTML = data.data.cases_today;
-  updated.forEach((update) => (update.innerHTML = data.data.last_update));
+  const { data } = await res.json();
+  cases.innerHTML = data.cases;
+  deaths.innerHTML = data.deaths;
+  recoveries.innerHTML = data.recoveries;
+  admitted.innerHTML = data.admitted;
+  fatality.innerHTML = data.fatality_rate;
+  recovery.innerHTML = data.recovery_rate;
+  deathsToday.innerHTML = data.deaths_today;
+  recoveriesToday.innerHTML = data.recoveries_today;
+  casesToday.innerHTML = data.cases_today;
+  updated.forEach((update) => (update.innerHTML = data.last_update));
 
   totalCases(true);
 }
